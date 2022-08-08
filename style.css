@@ -1,0 +1,89 @@
+/* Zerando todas as config da página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Criando variável padrões */
+:root {
+    /* backagrounds  */
+    --bgBody: #fae1c3;
+    --bgBodyDark: #0c0a0a;
+
+    /* font family  */
+    --fontFamily: 'Righteous', cursive;
+
+    /* font size  e color*/
+    --fontNormal: 2rem;
+    --fontMobile: 1rem;
+     
+}
+
+/* Estilo do corpo página */
+body {
+  padding: 30px;
+  width: 500px;
+  background: var(--bgBody);
+  
+}
+
+/* Aterando a cor da página para Dark */
+.bobyDark {
+    /* --bgbody: ;
+    --colorText: ; */
+}
+
+/* Estilização do header */
+
+.header {
+    text-align: center;
+    padding: 20px 20px;
+}
+.spanRocket {
+    color: #000;
+    text-shadow: 1px 1px #995000;
+    
+}
+
+.spanCoffee {
+    color: #995000;
+    text-shadow: 1px 1px #333;
+}
+
+/* Estilização do Menu */
+.brunch h2,
+.drinks h2{
+    border: #fed7aa solid;
+    background: #fed7aa;
+    border-radius: 3px;
+    margin: 10px 0px 10px 0px;
+    align-items: center;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    margin-left: 5px;
+}
+
+.details {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.subtitle {
+    width: 100%;
+}
+.description {
+    text-align: justify;
+    width: 50%;
+    padding: 1px;
+}
+
+.price {
+    margin-left: 0 auto;
+    margin: 0px 0px 0px 150px;
+   
+}
