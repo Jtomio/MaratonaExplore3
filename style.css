@@ -8,8 +8,12 @@
 /* Criando variável padrões */
 :root {
     /* backagrounds  */
-    --bgBody: #fae1c3;
-    --bgBodyDark: #0c0a0a;
+    --bg-color: #fae1c3;
+    --text-color: #0c0a0a;
+    --text-color-dark: rgb(36, 25, 91);
+    --primary-color: #fed7aa;
+    --moon-color: rgb(10, 186, 245);
+    --sun-color: #f39c12; 
 
     /* font family  */
     --fontFamily: 'Righteous', cursive;
@@ -17,31 +21,96 @@
     /* font size  e color*/
     --fontNormal: 2rem;
     --fontMobile: 1rem;
+
+
+    
+  /* Transições */
+  --transtion: all 4s ease-in-out;
+  --transtion-custom: all 1s cubic-bezier(1, 0, 0, 1);
      
 }
 
+/* Estilização do input função dark mode */
+.checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .label {
+    background-color: var(--bg-color);
+    border-radius: 50px;
+    cursor: pointer;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+  
+    transform: scale(1);
+  }
+  
+  .label .ball {
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+  
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .label .ball {
+    transform: translateX(24px);
+  }
+  
+  .fa-moon {
+    color: var(--moon-color);
+  }
+  
+  .fa-sun {
+    color: var(--sun-color);
+  }
+  
+
+
 /* Estilo do corpo página */
 body {
+  height: 100vh;
   padding: 30px;
   width: 500px;
-  background: var(--bgBody);
+  background: var(--bg-color);
+  margin-left: auto;
+  margin-right: auto;
+  /* color: var(--text-color); */
   
 }
 
 /* Aterando a cor da página para Dark */
-.bobyDark {
-    /* --bgbody: ;
-    --colorText: ; */
-}
+body.dark-blue {
+    height: 100vh;
+    --primary-color: #4263eb;
+    transition: 0.5s;
+    --bg-color: #00082f;
+    --text-color: #edf2ff;
+   --moon-color: rgb(10, 186, 245);
+  }
 
 /* Estilização do header */
 
 .header {
     text-align: center;
     padding: 20px 20px;
+    color: var(--text-color);
 }
 .spanRocket {
-    color: #000;
+    color: var(--text-color);
     text-shadow: 1px 1px #995000;
     
 }
@@ -54,17 +123,19 @@ body {
 /* Estilização do Menu */
 .brunch h2,
 .drinks h2{
-    border: #fed7aa solid;
-    background: #fed7aa;
+    background: var(--primary-color);
     border-radius: 3px;
     margin: 10px 0px 10px 0px;
     align-items: center;
     text-align: center;
+    color: var(--text-color);
+    
 }
 
 li {
     list-style: none;
     margin-left: 5px;
+    margin-top: 15px;
 }
 
 .details {
@@ -75,15 +146,73 @@ li {
 
 .subtitle {
     width: 100%;
+    color: var(--text-color);
 }
 .description {
     text-align: justify;
     width: 50%;
     padding: 1px;
+    color: var(--text-color);
 }
 
 .price {
     margin-left: 0 auto;
     margin: 0px 0px 0px 150px;
+    color: var(--text-color);
+}
+
+/* estilização do footer */
+
+footer {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: 3px solid var(--primary-color);
+    margin-top: 20px;
    
+}
+
+.footerParagraph {
+    text-align: center;
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+footer .footerSocial {
+    color: var(--text-color);
+    position: relative;
+    display: flex;
+}
+
+footer .footerSocial li {
+    list-style: none;
+    
+}
+
+footer .footerSocial li a {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    display: inline-block;
+    transition: 0.5s;
+    margin: 0px 10px;
+}
+
+.footerSocial li a:hover {
+    opacity: 0.75;
+    transform: translateY(-10px) ;
+    color: var(--primary-color);
+
+}
+
+@media only screen and (max-width: 368px) {
+   body
+   footer{
+    flex-wrap: wrap;
+    width: 70%;
+    font-size: 1rem;
+   }
 }
